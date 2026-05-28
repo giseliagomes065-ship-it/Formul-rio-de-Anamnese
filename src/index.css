@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Alex+Brush&family=Great+Vibes&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-cursive: "Alex Brush", "Great Vibes", cursive;
+  
+  /* Custom Branding Colors based on provided CSS */
+  --color-therapist-bg: #f7f1ec;
+  --color-therapist-card: #fffaf7;
+  --color-therapist-text: #7b6a5f;
+  --color-therapist-title: #8d7465;
+  --color-therapist-accent: #c7a892;
+  --color-therapist-border: #eadfd7;
+  --color-therapist-input-border: #e2d3ca;
+  --color-therapist-primary: #b89d8b;
+  --color-therapist-secondary: #d6b8a4;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-therapist-bg text-therapist-text antialiased;
+  }
+}
