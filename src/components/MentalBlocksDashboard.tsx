@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import { Check } from 'lucide-react';
 
 
 interface Pergunta {
@@ -109,7 +110,7 @@ const secoesMap: Secao[] = [
     perguntas: [
       { texto: "Quais são seus maiores medos hoje?", tipo: 'textarea', gridSpan: 'full' },
       { texto: "Como foi o seu primeiro relacionamento amoroso?", tipo: 'textarea', gridSpan: 'full' },
-      { texto: "Quem você considera o real culpado ou responsável pelas dificuldades ou problemas que acontecem na sua vida hoje?", tipo: 'radio', opcoes: ["Vítima", "Responsável"], subPergunta: "Por quê? Quem?", mostrarSubSempre: true, gridSpan: 'full' },
+      { texto: "Quem você considera o real culpado ou responsável pelas dificuldades ou problemas que acontecem na sua vida hoje?", tipo: 'radio', opcoes: ["Vítima", "Responsável"], subPergunta: "Quem? Por quê?", mostrarSubSempre: true, gridSpan: 'full' },
       { texto: "Se considera vitoriosa(o) ou derrotada(o)?", tipo: 'radio', opcoes: ["Vitoriosa(o)", "Derrotada(o)"] },
       { texto: "Nos relacionamentos e na vida, você prefere ser:", tipo: 'radio', opcoes: ["Dominante", "Submisso"] },
       { texto: "Você se considera uma pessoa controladora ou acumula raiva, mágoas e ressentimentos de alguém?", tipo: 'radio', opcoes: ["Sim", "Não"], subPergunta: "Por quê? De quem?", mostrarSubSempre: true, gridSpan: 'full' },
@@ -264,13 +265,93 @@ export default function MentalBlocksDashboard() {
         
 
 
+        {/* TOP BRANDING: APENAS O NOME */}
+        <div className="flex flex-col items-center pt-8 pb-4 text-center print:pt-2">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-1"
+          >
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide text-[#032347]">
+              Gisélia Gomes
+            </h1>
+            <p className="text-xs sm:text-sm font-bold text-[#c78fa7] tracking-[0.4em] uppercase">
+              TERAPEUTA
+            </p>
+          </motion.div>
+        </div>
+
         {/* HEADER INDICATOR */}
-        <div className="text-center mb-16 md:mb-24 space-y-6 pt-4">
+        <div className="text-center mb-16 md:mb-20 space-y-6 pt-4">
             <h2 className="text-[#032347] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-[0.3em] leading-tight">
                 Formulário de Anamnese
             </h2>
             <div className="h-1 w-24 sm:w-32 bg-[#c78fa7]/40 mx-auto rounded-full" />
         </div>
+
+        {/* IMPORTÂNCIA DA TERAPIA TRG */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="bg-white rounded-[3rem] shadow-[0_20px_50px_rgba(199,143,167,0.06)] border border-[#ead5df]/40 p-8 md:p-12 mb-16 md:mb-20 text-left max-w-4xl mx-auto print:shadow-none print:border-none print:bg-transparent print:p-0"
+        >
+          <h3 className="text-[#032347] font-black text-lg md:text-xl uppercase tracking-[0.25em] mb-4 text-center">
+            Importância da Terapia TRG
+          </h3>
+          <div className="h-0.5 w-12 bg-[#c78fa7]/50 mx-auto mb-6 rounded-full" />
+          <p className="text-[#032347]/80 font-medium text-sm md:text-base leading-relaxed text-left max-w-3xl mb-8 pb-8 border-b border-[#ead5df]/30 print:mb-4 print:pb-4 print:border-none">
+            A Terapia TRG (Terapia de Reprocessamento Generativo) é um processo terapêutico voltado ao reprocessamento de emoções associadas a traumas, medos, ansiedade, estresse e experiências difíceis vividas ao longo da vida. Quando essas emoções permanecem ativas, elas podem influenciar diretamente pensamentos, comportamentos, relações e a forma como a pessoa vivencia o seu dia a dia. O processo terapêutico atua na reorganização dessas experiências emocionais, reduzindo o sofrimento interno e promovendo maior equilíbrio, clareza, amadurecimento emocional e respostas mais saudáveis diante da vida.
+          </p>
+
+          {/* BENEFÍCIOS E RESULTADOS */}
+          <div className="space-y-6 print:break-inside-avoid">
+            <div className="text-left py-4 border-t border-[#ead5df]/30 print:border-none">
+              <h4 className="text-[#032347] font-black text-sm sm:text-base tracking-[0.2em] uppercase leading-relaxed text-left max-w-3xl">
+                Entre os principais benefícios e resultados, destacam-se:
+              </h4>
+            </div>
+
+            <ul className="max-w-3xl space-y-4 md:space-y-5">
+              {[
+                "Redução da ansiedade e do estresse emocional;",
+                "Melhora da autoestima e da autoconfiança;",
+                "Alívio de medos, traumas e lembranças dolorosas;",
+                "Mais equilíbrio emocional no dia a dia;",
+                "Melhora nos relacionamentos pessoais e familiares;",
+                "Sensação de leveza emocional e clareza mental;",
+                "Auxílio no controle de pensamentos negativos;",
+                "Mais disposição para viver, trabalhar e tomar decisões."
+              ].map((item, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: -15 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 * index + 0.4 }}
+                  className="flex items-start gap-4 group"
+                >
+                  <div className="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-[#fdeff4] border border-[#ead5df] text-[#c78fa7] group-hover:scale-105 transition-transform mt-0.5 shadow-xs">
+                    <Check className="w-3.5 h-3.5" strokeWidth={3.5} />
+                  </div>
+                  <span className="text-[#032347]/80 font-medium text-sm md:text-base leading-relaxed">
+                    {item}
+                  </span>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+
+          {/* CONTINUIDADE TEXT */}
+          <div className="mt-10 pt-10 border-t border-[#ead5df]/40 space-y-6 print:break-inside-avoid">
+            <p className="text-[#032347]/80 font-medium text-sm md:text-base leading-relaxed text-left max-w-3xl">
+              A terapia não apaga o passado, mas ajuda a pessoa a olhar para suas experiências de uma forma mais saudável e menos dolorosa. Muitas pessoas relatam que, após o processo terapêutico, conseguem dormir melhor, sentir mais paz interior e reagir às dificuldades com mais tranquilidade.
+            </p>
+            <p className="text-[#032347]/90 font-semibold text-sm md:text-base leading-relaxed text-left max-w-3xl">
+              Cuidar da saúde emocional é tão importante quanto cuidar da saúde física. Quando a mente encontra equilíbrio, a vida se torna mais leve, saudável e produtiva.
+            </p>
+          </div>
+        </motion.div>
 
         {/* MAPPING SECTIONS */}
         <div className="space-y-16 md:space-y-24">
@@ -341,12 +422,12 @@ export default function MentalBlocksDashboard() {
 
                         {p.tipo === 'radio' && (
                           <div className="space-y-4">
-                            <div className="flex flex-wrap gap-4">
+                            <div className="grid grid-cols-2 gap-2 max-w-sm">
                               {p.opcoes?.map(opt => (
                                 <button
                                   key={opt}
-                                  onClick={() => handleAnswerChange(p.texto, opt)}
-                                  className={`px-8 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border transition-all duration-300 ${
+                                  onClick={() => handleAnswerChange(p.texto, answers[p.texto] === opt ? "" : opt)}
+                                  className={`w-full text-center px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.15em] border transition-all duration-300 ${
                                     answers[p.texto] === opt 
                                       ? 'bg-[#c78fa7] border-[#c78fa7] text-white shadow-[0_10px_20px_rgba(199,143,167,0.3)] scale-105' 
                                       : 'bg-white border-[#c78fa7]/30 text-[#c78fa7]/70 hover:border-[#c78fa7] hover:bg-[#c78fa7]/5'
