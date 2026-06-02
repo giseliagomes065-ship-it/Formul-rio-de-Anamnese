@@ -41,6 +41,7 @@ const secoesMap: Secao[] = [
     titulo: "FASE 01 — VIDA PESSOAL",
     fase: "FASE 01",
     perguntas: [
+      { texto: "É casada (o), solteira (o) ou divorciada (o)?", tipo: 'radio', opcoes: ["Casada(o)", "Solteira(o)", "Divorciada(o)"], gridSpan: 'full' },
       { texto: "Se é divorciada (o), por qual motivo e como se sente?", tipo: 'textarea', gridSpan: 'full' },
       { texto: "Tem filhos? Se sim, relate a quantidade, como é o relacionamento e se há alguma frustração em relação a eles.", tipo: 'textarea', gridSpan: 'full', placeholder: "Descreva a quantidade, relação com os filhos e se sente alguma frustração..." },
       { texto: "Como você se sente em seu relacionamento com cônjuge/parceira (o)? Há frustrações na relação?", tipo: 'textarea', gridSpan: 'full', placeholder: "Descreva seu relacionamento atual e eventuais frustrações..." },
@@ -74,7 +75,7 @@ const secoesMap: Secao[] = [
     perguntas: [
       { texto: "Quais são os tipos de pensamentos que alimenta em relação a si mesma(o) (Geral e Aparência Física)?", tipo: 'radio', opcoes: ["Positivos", "Negativos"], subPergunta: "Quais exatamente?", mostrarSubSempre: true, gridSpan: 'full' },
       { texto: "Quais são os tipos de pensamentos que alimenta sobre si (Competência Profissional e Financeira)?", tipo: 'radio', opcoes: ["Positivos", "Negativos"], subPergunta: "Quais exatamente?", mostrarSubSempre: true, gridSpan: 'full' },
-      { texto: "Quais são os tipos de pensamentos que alimenta sobre si (Vida Emocional e Sexual)?", tipo: 'radio', opcoes: ["Positivos", "Negativos"], subPergunta: "Quais exatamente?", mostrarSubSempre: true, gridSpan: 'full' },
+      { texto: "Quais são os tipos de pensamentos que alimenta sobre si (Vida Emocional)?", tipo: 'radio', opcoes: ["Positivos", "Negativos"], subPergunta: "Quais exatamente?", mostrarSubSempre: true, gridSpan: 'full' },
       { texto: "Quais são os tipos de pensamentos que alimenta sobre si (Seu Passado e Futuro)?", tipo: 'radio', opcoes: ["Positivos", "Negativos"], subPergunta: "Quais exatamente?", mostrarSubSempre: true, gridSpan: 'full' },
       { texto: "Qual sua visão sobre você?", tipo: 'textarea', gridSpan: 'full' },
     ],
@@ -95,7 +96,7 @@ const secoesMap: Secao[] = [
       { texto: "Teve fase de rebeldia na adolescência?", tipo: 'radio', opcoes: ["Sim", "Não"] },
       { texto: "Com qual de seu pais você tinha mais dificuldade de relacionamento?", tipo: 'radio', opcoes: ["Pai", "Mãe", "Ambos"] },
       { texto: "Qual a filosofia de sua família em relação ao Sucesso Profissional e Dinheiro?", tipo: 'texto', gridSpan: 'full' },
-      { texto: "Qual a filosofia de sua família em relação ao Amor e ao Sexo?", tipo: 'texto', gridSpan: 'full' },
+      { texto: "Qual a filosofia de sua família em relação ao Amor?", tipo: 'texto', gridSpan: 'full' },
       { texto: "O que era para você ser uma(um) boa(bom) menina(o) e como deveria agir para se sentir amada(o)?", tipo: 'textarea', gridSpan: 'full', placeholder: "Descreva no que acreditava e o que precisava fazer..." },
       { texto: "Possui irmãos? Se sim, relate a quantidade, como é o relacionamento e eventuais frustrações.", tipo: 'textarea', gridSpan: 'full', placeholder: "Descreva seu relacionamento com irmão(s) e se há frustrações..." },
       { texto: "Você foi uma criança introvertida ou extrovertida?", tipo: 'radio', opcoes: ["Introvertida", "Extrovertida"] },
